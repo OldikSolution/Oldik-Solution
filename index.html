@@ -562,64 +562,66 @@ footer .footer-links a:hover{color:var(--gold);}
         <h2 class="section-title">Démarrons ensemble</h2>
         <p>Un premier échange de 30 minutes suffit pour identifier comment Oldik Solution peut vous accompagner. C'est gratuit et sans engagement.</p>
         <div class="contact-cards">
-          <div class="contact-card">
+          <a class="contact-card" href="mailto:contact.oldiksolution@gmail.com?subject=Contact%20depuis%20le%20site%20Oldik%20Solution" style="text-decoration:none;">
             <div class="contact-icon">✉</div>
             <div>
               <div class="contact-label">Email</div>
               <div class="contact-val">contact.oldiksolution@gmail.com</div>
             </div>
-          </div>
-          <div class="contact-card">
+          </a>
+          <a class="contact-card" href="https://wa.me/33751220186?text=Bonjour%20Oldik%20Solution%2C%20je%20vous%20contacte%20depuis%20votre%20site%20web." target="_blank" rel="noopener" style="text-decoration:none;">
             <div class="contact-icon">📱</div>
             <div>
               <div class="contact-label">WhatsApp</div>
               <div class="contact-val">+33 7 51 22 01 86</div>
             </div>
-          </div>
-          <div class="contact-card">
+          </a>
+          <a class="contact-card" href="https://oldiksolution.github.io/Oldik-Solution/" target="_blank" rel="noopener" style="text-decoration:none;">
             <div class="contact-icon">🌐</div>
             <div>
               <div class="contact-label">Site web</div>
-              <div class="contact-val">www.oldiksolution.com</div>
+              <div class="contact-val">oldiksolution.github.io/Oldik-Solution</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <div class="contact-form fade-up" style="transition-delay:.2s">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Prénom</label>
-            <input type="text" placeholder="Votre prénom">
+        <form action="https://formspree.io/f/mbdeaapd" method="POST" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Prénom</label>
+              <input type="text" name="prenom" placeholder="Votre prénom" required>
+            </div>
+            <div class="form-group">
+              <label>Nom</label>
+              <input type="text" name="nom" placeholder="Votre nom" required>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Nom</label>
-            <input type="text" placeholder="Votre nom">
+          <div class="form-group" style="margin-bottom:14px">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="votre@email.com" required>
           </div>
-        </div>
-        <div class="form-group" style="margin-bottom:14px">
-          <label>Email</label>
-          <input type="email" placeholder="votre@email.com">
-        </div>
-        <div class="form-group" style="margin-bottom:14px">
-          <label>Pôle d'intérêt</label>
-          <select>
-            <option value="">Sélectionnez un domaine</option>
-            <option>Stratégie &amp; Organisation</option>
-            <option>Commercial &amp; Marketing</option>
-            <option>Digital, IT &amp; Outils</option>
-            <option>QHSE</option>
-            <option>Finance, Audit &amp; Gestion</option>
-            <option>Formation &amp; Recrutement</option>
-            <option>Assistance Technique &amp; AO</option>
-            <option>Autre / Plusieurs domaines</option>
-          </select>
-        </div>
-        <div class="form-group" style="margin-bottom:14px">
-          <label>Votre message</label>
-          <textarea placeholder="Décrivez brièvement votre besoin ou votre projet..."></textarea>
-        </div>
-        <button class="form-submit" onclick="sendContact()">Envoyer le message</button>
-        <div class="form-note">Réponse garantie sous 24 heures ouvrées</div>
+          <div class="form-group" style="margin-bottom:14px">
+            <label>Pôle d'intérêt</label>
+            <select name="pole">
+              <option value="">Sélectionnez un domaine</option>
+              <option>Stratégie &amp; Organisation</option>
+              <option>Commercial &amp; Marketing</option>
+              <option>Digital, IT &amp; Outils</option>
+              <option>QHSE</option>
+              <option>Finance, Audit &amp; Gestion</option>
+              <option>Formation &amp; Recrutement</option>
+              <option>Assistance Technique &amp; AO</option>
+              <option>Autre / Plusieurs domaines</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:14px">
+            <label>Votre message</label>
+            <textarea name="message" placeholder="Décrivez brièvement votre besoin ou votre projet..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Envoyer le message</button>
+          <div class="form-note">Réponse garantie sous 24 heures ouvrées</div>
+        </form>
       </div>
     </div>
   </div>
@@ -636,7 +638,7 @@ footer .footer-links a:hover{color:var(--gold);}
     <a href="#equipe">Équipe</a>
     <a href="#contact">Contact</a>
   </div>
-  <p>© 2026 Oldik Solution · contact.oldiksolution@gmail.com · +33 7 51 22 01 86</p>
+  <p>© 2026 Oldik Solution · <a href="mailto:contact.oldiksolution@gmail.com" style="color:inherit;text-decoration:underline;">contact.oldiksolution@gmail.com</a> · <a href="https://wa.me/33751220186" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">+33 7 51 22 01 86</a></p>
   <p style="margin-top:6px;color:#4A6070;">"We Work for the Future"</p>
 </footer>
 
@@ -646,15 +648,40 @@ function toggleMenu(){
   nl.classList.toggle('open');
 }
 
-function sendContact(){
+function sendContact(e){
+  if(e) e.preventDefault();
+  var form=document.getElementById('contactForm');
   var btn=document.querySelector('.form-submit');
-  btn.textContent='Message envoyé ✓';
-  btn.style.background='var(--teal)';
-  setTimeout(function(){
-    btn.textContent='Envoyer le message';
-    btn.style.background='var(--gold)';
-  },3000);
+  var data=new FormData(form);
+  btn.textContent='Envoi en cours...';
+  fetch(form.action,{
+    method:'POST',
+    body:data,
+    headers:{'Accept':'application/json'}
+  }).then(function(response){
+    if(response.ok){
+      btn.textContent='Message envoyé ✓';
+      btn.style.background='var(--teal)';
+      form.reset();
+    } else {
+      btn.textContent='Erreur — réessayez';
+      btn.style.background='#c0392b';
+    }
+    setTimeout(function(){
+      btn.textContent='Envoyer le message';
+      btn.style.background='var(--gold)';
+    },3500);
+  }).catch(function(){
+    btn.textContent='Erreur — réessayez';
+    btn.style.background='#c0392b';
+    setTimeout(function(){
+      btn.textContent='Envoyer le message';
+      btn.style.background='var(--gold)';
+    },3500);
+  });
 }
+
+document.getElementById('contactForm').addEventListener('submit', sendContact);
 
 var observer=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
