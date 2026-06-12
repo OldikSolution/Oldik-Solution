@@ -154,6 +154,17 @@ section{padding:80px 5%;}
 .form-submit:hover{background:var(--goldL);}
 .form-note{text-align:center;font-size:11px;color:var(--mid);margin-top:8px;}
 
+/* ── TÉMOIGNAGES ─────────────────────────────────────────────── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.testi-card{background:var(--white);border:0.5px solid #D0DCE8;border-radius:12px;padding:28px 24px;display:flex;flex-direction:column;position:relative;}
+.testi-quote{font-size:48px;color:var(--gold);line-height:1;font-family:Georgia,serif;height:28px;opacity:.5;}
+.testi-text{font-size:14px;color:var(--slate);line-height:1.65;font-style:italic;margin:8px 0 20px;flex:1;}
+.testi-author{display:flex;align-items:center;gap:12px;border-top:0.5px solid var(--light);padding-top:16px;}
+.testi-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--white);flex-shrink:0;}
+.testi-name{font-size:13.5px;font-weight:700;color:var(--navy);}
+.testi-role{font-size:12px;color:var(--mid);}
+.testi-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:4px;}
+
 /* ── KUMOSI ──────────────────────────────────────────────────── */
 .kumosi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:12px;}
 .kumosi-card{background:var(--white);border:0.5px solid #D0DCE8;border-radius:10px;padding:24px;}
@@ -173,17 +184,17 @@ footer .footer-links a:hover{color:var(--gold);}
 @media(max-width:900px){
   .hero-inner,.about-grid,.contact-inner,.team-grid{grid-template-columns:1fr;}
   .hero-right,.stats-right{grid-template-columns:repeat(2,1fr);}
-  .poles-grid,.why-grid,.kumosi-grid{grid-template-columns:1fr 1fr;}
+  .poles-grid,.why-grid,.kumosi-grid,.testi-grid{grid-template-columns:1fr 1fr;}
   .steps-row{grid-template-columns:1fr 1fr;gap:20px;}
   .steps-row::before{display:none;}
   .refs-grid{grid-template-columns:1fr;}
   nav{padding:0 4%;}
   .nav-links{display:none;}
   .hamburger{display:flex;}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--dark);padding:16px 5%;gap:16px;}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:172px;left:0;right:0;background:var(--dark);padding:16px 5%;gap:16px;}
 }
 @media(max-width:600px){
-  .poles-grid,.why-grid,.kumosi-grid,.hero-right,.stats-right,.form-row{grid-template-columns:1fr;}
+  .poles-grid,.why-grid,.kumosi-grid,.testi-grid,.hero-right,.stats-right,.form-row{grid-template-columns:1fr;}
   .steps-row{grid-template-columns:1fr;}
   .values-grid{grid-template-columns:1fr;}
 }
@@ -204,6 +215,7 @@ footer .footer-links a:hover{color:var(--gold);}
     <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
     <li><a href="#offre">Notre offre</a></li>
     <li><a href="#references">Références</a></li>
+    <li><a href="#temoignages">Avis</a></li>
     <li><a href="#equipe">Équipe</a></li>
     <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
   </ul>
@@ -447,8 +459,56 @@ footer .footer-links a:hover{color:var(--gold);}
   </div>
 </section>
 
+<!-- ══════════════════════ TÉMOIGNAGES ═════════════════════════ -->
+<section id="temoignages" class="light-section">
+  <div class="section-inner">
+    <span class="section-tag">Témoignages</span>
+    <h2 class="section-title">Ce que disent nos clients</h2>
+    <p class="section-sub">La confiance de nos clients est notre meilleure référence.</p>
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">Oldik Solution a structuré toute notre stratégie commerciale avec un professionnalisme remarquable. Un vrai partenaire qui comprend les enjeux et délivre des résultats concrets.</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--gold)">ME</div>
+          <div>
+            <div class="testi-name">Maison Eliora</div>
+            <div class="testi-role">Bijouterie haut de gamme</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up" style="transition-delay:.1s">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">Un accompagnement stratégique et technique de très haut niveau. Grâce à Oldik Solution, nous avons ouvert le marché provincial et augmenté nos recettes de plus de 70%.</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--teal)">eR</div>
+          <div>
+            <div class="testi-name">eRegie</div>
+            <div class="testi-role">GovTech · RDC</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up" style="transition-delay:.2s">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">Un accompagnement décisif pour structurer notre dossier et décrocher notre financement. Réactivité, rigueur et vrais résultats au rendez-vous.</div>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:var(--blue)">EA</div>
+          <div>
+            <div class="testi-name">Entrepreneur accompagné</div>
+            <div class="testi-role">Financement R&amp;D obtenu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:24px;font-size:12.5px;color:var(--mid);font-style:italic;">Témoignages issus de nos missions. D'autres références disponibles sur demande.</p>
+  </div>
+</section>
+
 <!-- ══════════════════════════ ÉQUIPE ══════════════════════════ -->
-<section id="equipe" class="light-section">
+<section id="equipe" style="background:var(--white);">
   <div class="section-inner">
     <span class="section-tag">L'équipe</span>
     <h2 class="section-title">Des experts engagés à vos côtés</h2>
@@ -576,13 +636,13 @@ footer .footer-links a:hover{color:var(--gold);}
               <div class="contact-val">+33 7 51 22 01 86</div>
             </div>
           </a>
-          <a class="contact-card" href="https://oldiksolution.github.io/Oldik-Solution/" target="_blank" rel="noopener" style="text-decoration:none;">
-            <div class="contact-icon">🌐</div>
+          <div class="contact-card">
+            <div class="contact-icon">🌍</div>
             <div>
-              <div class="contact-label">Site web</div>
-              <div class="contact-val">oldiksolution.github.io/Oldik-Solution</div>
+              <div class="contact-label">Zone d'intervention</div>
+              <div class="contact-val">France · Afrique · Au-delà</div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
       <div class="contact-form fade-up" style="transition-delay:.2s">
@@ -635,6 +695,7 @@ footer .footer-links a:hover{color:var(--gold);}
     <a href="#qui-sommes-nous">Qui sommes-nous</a>
     <a href="#offre">Notre offre</a>
     <a href="#references">Références</a>
+    <a href="#temoignages">Avis</a>
     <a href="#equipe">Équipe</a>
     <a href="#contact">Contact</a>
   </div>
@@ -647,6 +708,12 @@ function toggleMenu(){
   var nl=document.getElementById('navLinks');
   nl.classList.toggle('open');
 }
+// Fermer le menu mobile quand on clique sur un lien
+document.querySelectorAll('#navLinks a').forEach(function(link){
+  link.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
 
 function sendContact(e){
   if(e) e.preventDefault();
