@@ -222,6 +222,20 @@ section{padding:80px 5%;}
 .modal-footer{padding:0 32px 28px;display:flex;gap:12px;flex-wrap:wrap;}
 .modal-footer .offre-btn{flex:1;min-width:160px;}
 
+/* ── VIVIER FREELANCE ────────────────────────────────────────── */
+.vivier-intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:40px;}
+.vivier-benefits{list-style:none;padding:0;margin:18px 0 0;}
+.vivier-benefits li{font-size:14px;color:var(--mid);line-height:1.5;padding:8px 0 8px 30px;position:relative;}
+.vivier-benefits li::before{content:'✓';position:absolute;left:0;top:7px;color:var(--gold);font-weight:700;font-size:15px;width:20px;height:20px;}
+.vivier-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.vivier-stat{background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.14);border-radius:10px;padding:22px 18px;text-align:center;}
+.vivier-stat .n{font-size:32px;font-weight:700;color:var(--gold);line-height:1;}
+.vivier-stat .l{font-size:12px;color:var(--mid);margin-top:6px;line-height:1.4;}
+.vivier-form-wrap{background:var(--white);border-radius:14px;padding:14px;box-shadow:0 10px 40px rgba(0,0,0,.15);}
+.vivier-form-wrap iframe{width:100%;border:none;border-radius:8px;min-height:1200px;display:block;}
+.vivier-alt{text-align:center;margin-top:22px;font-size:13px;color:var(--mid);}
+.vivier-alt a{color:var(--gold);text-decoration:underline;font-weight:600;}
+
 /* ── KUMOSI ──────────────────────────────────────────────────── */
 .kumosi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:12px;}
 .kumosi-card{background:var(--white);border:0.5px solid #D0DCE8;border-radius:10px;padding:24px;}
@@ -239,7 +253,7 @@ footer .footer-links a:hover{color:var(--gold);}
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media(max-width:900px){
-  .hero-inner,.about-grid,.contact-inner,.team-grid{grid-template-columns:1fr;}
+  .hero-inner,.about-grid,.contact-inner,.team-grid,.vivier-intro{grid-template-columns:1fr;}
   .hero-right,.stats-right{grid-template-columns:repeat(2,1fr);}
   .poles-grid,.why-grid,.kumosi-grid,.testi-grid{grid-template-columns:1fr 1fr;}
   .steps-row{grid-template-columns:1fr 1fr;gap:20px;}
@@ -274,7 +288,8 @@ footer .footer-links a:hover{color:var(--gold);}
     <li><a href="#offre">Notre offre</a></li>
     <li><a href="#references">Références</a></li>
     <li><a href="#temoignages">Avis</a></li>
-    <li><a href="#offres">Opportunités</a></li>
+    <li><a href="#offres">Offres</a></li>
+    <li><a href="#vivier">Vivier</a></li>
     <li><a href="#equipe">Équipe</a></li>
     <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
   </ul>
@@ -681,6 +696,44 @@ footer .footer-links a:hover{color:var(--gold);}
   </div>
 </section>
 
+<!-- ══════════════════════ VIVIER FREELANCE ════════════════════ -->
+<section id="vivier" class="dark-section" style="background:var(--dark);">
+  <div class="section-inner">
+    <span class="section-tag">Vivier Freelance</span>
+    <h2 class="section-title">Rejoignez notre réseau de consultants</h2>
+    <p class="section-sub">Vous êtes freelance, consultant ou expert ? Intégrez notre vivier et soyez sollicité dès qu'une mission correspond à votre profil.</p>
+
+    <div class="vivier-intro">
+      <div class="fade-up">
+        <p style="font-size:14.5px;color:var(--mid);line-height:1.7;">Oldik Solution constitue un réseau de consultants qualifiés, aux profils diversifiés, mobilisables rapidement pour répondre aux besoins de nos clients et aux appels d'offres.</p>
+        <ul class="vivier-benefits">
+          <li>Des missions adaptées à votre expertise et vos disponibilités</li>
+          <li>Une mise en relation directe avec nos clients et partenaires</li>
+          <li>Des opportunités en France, en Afrique et au-delà</li>
+          <li>Un référencement gratuit et sans engagement</li>
+        </ul>
+        <div class="vivier-stats" style="margin-top:28px;">
+          <div class="vivier-stat">
+            <div class="n">200+</div>
+            <div class="l">Consultants déjà référencés</div>
+          </div>
+          <div class="vivier-stat">
+            <div class="n">10 min</div>
+            <div class="l">Pour compléter le formulaire</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.15s">
+        <div class="vivier-form-wrap">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdKHvJh0-aEqHDswV3gmv9NG43ClyAN7_IwvXHP9frx1jeFtw/viewform?embedded=true" title="Formulaire vivier consultants Oldik Solution" loading="lazy">Chargement…</iframe>
+        </div>
+        <p class="vivier-alt">Le formulaire ne s'affiche pas ? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKHvJh0-aEqHDswV3gmv9NG43ClyAN7_IwvXHP9frx1jeFtw/viewform" target="_blank" rel="noopener">Ouvrez-le dans un nouvel onglet</a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ══════════════════════ POURQUOI NOUS ═══════════════════════ -->
 <section class="dark-section">
   <div class="section-inner">
@@ -932,6 +985,7 @@ footer .footer-links a:hover{color:var(--gold);}
     <a href="#references">Références</a>
     <a href="#temoignages">Avis</a>
     <a href="#offres">Offres</a>
+    <a href="#vivier">Vivier</a>
     <a href="#equipe">Équipe</a>
     <a href="#contact">Contact</a>
   </div>
